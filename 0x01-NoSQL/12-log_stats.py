@@ -22,7 +22,10 @@ def log_stats():
         print(f"method {method}: {count}")
 
     # Get count of status checks
-    status_check = nginx.count_documents({"method": "GET", "path": "/status"})
+    status_check = nginx.count_documents({
+        "method": "GET",
+        "path": "/status"
+    })
     print(f"{status_check} status check")
 
 
